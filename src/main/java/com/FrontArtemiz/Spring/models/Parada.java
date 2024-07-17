@@ -1,6 +1,12 @@
 package com.FrontArtemiz.Spring.models;
 
-public class Parada {
+import java.io.Serializable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="controlparadas")
+public class Parada implements Serializable {
 	int id,id_causal;
 	String desc_causal;
 	String fecha;
@@ -10,8 +16,7 @@ public class Parada {
 	public String toString() {
 		return "Parada [id=" + id + ", id_causal=" + id_causal + ", desc_causal=" + desc_causal + ", fecha=" + fecha
 				+ ", maquina=" + maquina + "]";
-	}
-	
+	}	
 	
 	public int getId() {
 		return id;
@@ -43,7 +48,6 @@ public class Parada {
 	public void setMaquina(String maquina) {
 		this.maquina = maquina;
 	}
-	
 	
 	
 }
