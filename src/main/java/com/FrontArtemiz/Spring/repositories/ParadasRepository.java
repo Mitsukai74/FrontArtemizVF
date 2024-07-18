@@ -10,6 +10,8 @@ import com.FrontArtemiz.Spring.models.Parada;
 @Repository
 public interface ParadasRepository extends CrudRepository<Parada,Integer> {
 	
-	@Transactional(readOnly = true)
-	Optional<Parada> findBymaquina(String maquina);
+	/*
+	 * @Transactional(readOnly = true) Optional<Parada> findBymaquina(String
+	 * maquina);
+	 */
 }

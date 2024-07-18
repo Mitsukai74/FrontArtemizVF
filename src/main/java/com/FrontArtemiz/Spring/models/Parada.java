@@ -1,21 +1,39 @@
 package com.FrontArtemiz.Spring.models;
 
 import java.io.Serializable;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import jakarta.persistence.Id;
 
 @Entity
 @Table(name="controlparadas")
 public class Parada implements Serializable {
-	int id,id_causal;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	int id;
+	@Column(name="id_causal")
+	int id_causal;
+	@Column(name="causal")
 	String desc_causal;
+	@Column(name="fecha")
 	String fecha;
-	String maquina;
+	@Column(name="time")
+	String time;
 	
 	@Override
 	public String toString() {
 		return "Parada [id=" + id + ", id_causal=" + id_causal + ", desc_causal=" + desc_causal + ", fecha=" + fecha
-				+ ", maquina=" + maquina + "]";
+				+ ", time=" + time + "]";
 	}	
 	
 	public int getId() {
@@ -42,11 +60,11 @@ public class Parada implements Serializable {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	public String getMaquina() {
-		return maquina;
+	public String getTime() {
+		return time;
 	}
-	public void setMaquina(String maquina) {
-		this.maquina = maquina;
+	public void setTime(String time) {
+		this.time = time;
 	}
 	
 	
